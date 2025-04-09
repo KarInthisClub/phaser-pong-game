@@ -64,6 +64,21 @@ export class Game extends Scene {
                 this.rightpaddle.y += 5;
             }
         }
+        if (this.ball.x < 19) {
+            this.ballinmotion = false;
+            this.ball.setVelocity(0, 0);
+            this.ball.x = WIDTH/2;
+            this.ball.y = HEIGHT/2;
+        }
+        if (this.ball.x > 1003) {
+            this.ballinmotion = false;
+            this.ball.setVelocity(0, 0);
+            this.ball.x = WIDTH/2;
+            this.ball.y = HEIGHT/2;
+        }
+        if (this.ball.x > 944 && this.rightpaddle.y - 100 > this.ball.y > this.rightpaddle.y + 100) {
+            this.ball.setVelocityX(-200)
+        }
     }
 
     startBall() {
